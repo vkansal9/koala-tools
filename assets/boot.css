@@ -1,0 +1,12 @@
+body { margin: 0; background: #0b1020; color: #dfe6f5;
+       font-family: -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; }
+.boot { max-width: 520px; margin: 18vh auto 0 auto; padding: 0 24px;
+        text-align: center; }
+.boot h1 { font-size: 22px; font-weight: 600; margin: 18px 0 6px 0; }
+.boot p { color: #9fb3d9; margin: 6px 0; }
+.boot .small { font-size: 12px; color: #6f7fa3; margin-top: 18px; }
+.boot a { color: #8fc7ff; }
+.spinner { width: 34px; height: 34px; margin: 0 auto; border-radius: 50%;
+           border: 3px solid #26304d; border-top-color: #5aa9ff;
+           animation: spin 0.9s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KOALA observing tools</title>
+<meta name="description" content="Browser tools for planning KOALA observations at the Anglo-Australian Telescope: mosaics, small offsets, offsets between positions and focus.">
+<style>
+  :root { --ink: #1d2330; --muted: #5b6478; --line: #dde2ea; --bg: #f4f6f9;
+          --night: #0b1020; --accent: #2563eb; }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: -apple-system, "Segoe UI", Helvetica, Arial,
+         sans-serif; color: var(--ink); background: var(--bg);
+         line-height: 1.55; }
+  a { color: var(--accent); }
+  header { background: radial-gradient(ellipse at 70% 0%, #1e2a52 0%,
+           var(--night) 60%); color: #fff; padding: 56px 24px 64px; }
+  .wrap { max-width: 1080px; margin: 0 auto; }
+  header h1 { font-size: 38px; margin: 0 0 10px; letter-spacing: -0.01em; }
+  header p { font-size: 17px; color: #b8c4e0; max-width: 680px; margin: 0; }
+  .buttons { margin-top: 26px; display: flex; flex-wrap: wrap; gap: 12px; }
+  .btn { display: inline-block; padding: 10px 18px; border-radius: 8px;
+         text-decoration: none; font-weight: 600; font-size: 15px; }
+  .btn.primary { background: var(--accent); color: #fff; }
+  .btn.primary:hover { background: #1d4ed8; }
+  .btn.ghost { color: #fff; border: 1px solid #44507a; }
+  .btn.ghost:hover { background: #18213d; }
+  main { padding: 0 24px 60px; }
+  h2 { font-size: 22px; margin: 48px 0 16px; }
+  .grid { display: grid; gap: 20px;
+          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+  .card { background: #fff; border: 1px solid var(--line); border-radius: 12px;
+          overflow: hidden; display: flex; flex-direction: column; }
+  .card img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover;
+              object-position: top left; border-bottom: 1px solid var(--line);
+              background: var(--night); display: block; }
+  .card .body { padding: 16px 18px 18px; display: flex; flex-direction: column;
+                flex: 1; }
+  .card h3 { margin: 0 0 6px; font-size: 18px; }
+  .card p { margin: 0 0 14px; color: var(--muted); font-size: 14px; flex: 1; }
+  .card .links { display: flex; gap: 10px; flex-wrap: wrap; }
+  .card .links a { font-size: 14px; font-weight: 600; text-decoration: none;
+                   padding: 7px 14px; border-radius: 7px; }
+  .card .links .open { background: var(--accent); color: #fff; }
+  .card .links .get { border: 1px solid var(--line); color: var(--ink); }
+  .tag { display: inline-block; font-size: 11px; font-weight: 700;
+         text-transform: uppercase; letter-spacing: .05em; color: #8a5a00;
+         background: #fff4d6; border-radius: 4px; padding: 1px 6px;
+         margin-left: 6px; vertical-align: 2px; }
+  .steps { background: #fff; border: 1px solid var(--line); border-radius: 12px;
+           padding: 8px 24px 18px; }
+  .steps ol { padding-left: 20px; }
+  .steps li { margin: 10px 0; }
+  code { background: #eef1f6; padding: 2px 6px; border-radius: 4px;
+         font-size: 13.5px; }
+  pre { background: var(--night); color: #dfe6f5; padding: 14px 16px;
+        border-radius: 8px; overflow-x: auto; font-size: 13.5px; }
+  pre code { background: none; padding: 0; color: inherit; }
+  .about { color: var(--muted); font-size: 14px; max-width: 820px; }
+  footer { border-top: 1px solid var(--line); padding: 22px 24px;
+           color: var(--muted); font-size: 13px; }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <h1>KOALA observing tools</h1>
+    <p>Small tools for planning and running observations with KOALA, the
+    integral-field unit on the 3.9&nbsp;m Anglo-Australian Telescope. They
+    run in your browser, with nothing to install, or as plain Python
+    scripts on your own computer.</p>
+    <div class="buttons">
+      <a class="btn primary" href="mosaic.html">Open the mosaic planner</a>
+      <a class="btn ghost" id="repo-link" href="#run">Run it yourself</a>
+    </div>
+  </div>
+</header>
+
+<main>
+<div class="wrap">
+  <h2>Tools</h2>
+  <div class="grid">
+    <div class="card">
+      <img src="screenshots/mosaic.png" alt="Mosaic planner: fields over a galaxy, observing order and sequence table">
+      <div class="body">
+        <h3>Mosaic planner <span class="tag">new</span></h3>
+        <p>Tile a galaxy with KOALA fields for a given position angle: the
+        observing order, sky frames, offsets from the centre, RA/Dec of every
+        pointing and the small offsets a, b, c, d drawn over the galaxy.</p>
+        <div class="links"><a class="open" href="mosaic.html">Open</a>
+        <a class="get" href="tools/koala_mosaic.py" download>Download .py</a></div>
+      </div>
+    </div>
+    <div class="card">
+      <img src="screenshots/offsets.png" alt="Small offsets table for a position angle">
+      <div class="body">
+        <h3>Small offsets</h3>
+        <p>The offsets c&nbsp;&rarr;&nbsp;a, a&nbsp;&rarr;&nbsp;b,
+        b&nbsp;&rarr;&nbsp;c and b&nbsp;&rarr;&nbsp;d in arcsec for a given
+        position angle, in WIDE or NARROW mode.</p>
+        <div class="links"><a class="open" href="offsets.html">Open</a>
+        <a class="get" href="tools/koala_offsets.py" download>Download .py</a></div>
+      </div>
+    </div>
+    <div class="card">
+      <img src="screenshots/positions.png" alt="Offset between two positions">
+      <div class="body">
+        <h3>Offset between two positions</h3>
+        <p>The North/South and East/West offset in arcsec from one RA/Dec to
+        another, and back again.</p>
+        <div class="links"><a class="open" href="positions.html">Open</a>
+        <a class="get" href="tools/offset_positions.py" download>Download .py</a></div>
+      </div>
+    </div>
+    <div class="card">
+      <img src="screenshots/focus.png" alt="Focus curve fitted to FWHM measurements">
+      <div class="body">
+        <h3>Focus</h3>
+        <p>Fit a parabola to FWHM measured at several focus values (KOALA blue
+        and red, or the TV camera) to find the best focus and seeing.</p>
+        <div class="links"><a class="open" href="focus.html">Open</a>
+        <a class="get" href="tools/koala_focus.py" download>Download .py</a></div>
+      </div>
+    </div>
+  </div>
+
+  <h2 id="run">Run it on your own computer</h2>
+  <div class="steps">
+    <ol>
+      <li>Install <a href="https://www.python.org/downloads/">Python 3.8 or
+      newer</a> if you do not have it. Nothing else is needed: the tools use
+      only Python&rsquo;s standard library.</li>
+      <li>Download one tool with its <b>Download .py</b> button above, or the
+      whole collection <span id="zip-link">from the repository</span>.</li>
+      <li>Run it, and it opens in your web browser:
+<pre><code>python3 koala_mosaic.py</code></pre>
+      On Windows use <code>python koala_mosaic.py</code>. Press
+      <code>Ctrl+C</code> in the terminal to stop it.</li>
+    </ol>
+    <p class="about">Running it yourself also works at the telescope
+    without internet; only the background sky images and galaxy-name
+    look-up need a connection (positions can always be typed in).</p>
+  </div>
+
+  <h2>About</h2>
+  <div class="about">
+    <p>The mosaic planner is by Vanshika Kansal. The small-offsets,
+    offset-between-positions and focus tools are adapted from the KOALA
+    observing scripts used at the Anglo-Australian Telescope; the focus
+    script is by &Aacute;ngel R. L&oacute;pez-S&aacute;nchez (AAO/MQU).
+    Credit and thanks to their authors.</p>
+    <p>This is an independent, unofficial collection: it is not run or
+    endorsed by the AAT or its operators. Always check offsets against the
+    telescope&rsquo;s own procedures before observing.</p>
+    <p>Position angle convention (all tools): PA counts from North through
+    East; at rotator PA&nbsp;0 the long axis of the KOALA field runs
+    East&ndash;West.</p>
+  </div>
+</div>
+</main>
+
+<footer><div class="wrap">KOALA observing tools &middot;
+<span id="repo-footer">open source on GitHub</span></div></footer>
+
+<script>
+  // On GitHub Pages (user.github.io/repo/) link back to the repository.
+  (function () {
+    var host = location.hostname, parts = location.pathname.split("/");
+    if (!/\.github\.io$/.test(host) || !parts[1]) return;
+    var repo = "https://github.com/" + host.split(".")[0] + "/" + parts[1];
+    var a = document.getElementById("repo-link");
+    a.href = repo; a.textContent = "View on GitHub";
+    document.getElementById("zip-link").innerHTML =
+      'as a <a href="' + repo + '/archive/refs/heads/main.zip">ZIP file</a>';
+    document.getElementById("repo-footer").innerHTML =
+      '<a href="' + repo + '">source on GitHub</a>';
+  })();
+</script>
+</body>
+</html>
