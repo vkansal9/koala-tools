@@ -19,6 +19,7 @@ Every tool works in two ways:
 | Small offsets | [`tools/koala_offsets.py`](tools/koala_offsets.py) | Offsets c -> a, a -> b, b -> c and b -> d (arcsec) for a position angle, WIDE or NARROW. |
 | Offset between positions | [`tools/offset_positions.py`](tools/offset_positions.py) | North/South and East/West offset (arcsec) from one RA/Dec to another. |
 | Focus | [`tools/koala_focus.py`](tools/koala_focus.py) | Parabola fit to FWHM against focus value: best focus and seeing. |
+| What's Up? planner | [`whatsup.html`](whatsup.html) (links to [whatsup.icrar.org](https://whatsup.icrar.org)) | ICRAR's observation planner: target visibility, altitude/airmass, Moon and Sun, year plan and finder charts. Runs on ICRAR's site and needs internet. |
 
 ## Run on your own computer
 
@@ -66,6 +67,7 @@ To add a tool: put `my_tool.py` in `tools/` (it needs a `Handler` class with `do
 ## Credits
 
 - **Small offsets**, **offset between positions** and **focus**: adapted from the KOALA observing scripts used at the AAT. The focus script is by Ángel R. López-Sánchez (AAO/MQU), version 1.1, 2018. These remain the work of their original authors.
+- **What's Up?**: observation planner by Aaron Robotham, ICRAR. It is not part of this repository; `whatsup.html` shows the live site from [whatsup.icrar.org](https://whatsup.icrar.org) in a frame, with a link to open it directly.
 
 
 This is an independent, unofficial collection; it is not run or endorsed by the AAT or its operators. Check offsets against the telescope's own procedures before observing.

@@ -34,6 +34,14 @@
   .card img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover;
               object-position: top left; border-bottom: 1px solid var(--line);
               background: var(--night); display: block; }
+  .card .sky { aspect-ratio: 16 / 9; border-bottom: 1px solid var(--line);
+               background: radial-gradient(circle at 75% 30%, #3b4f8f 0 6%,
+               transparent 7%), radial-gradient(ellipse at 30% 110%,
+               #1e2a52 0%, var(--night) 70%); color: #fff; display: flex;
+               flex-direction: column; justify-content: center;
+               align-items: center; gap: 4px; }
+  .card .sky span { font-size: 28px; font-weight: 700; }
+  .card .sky small { color: #9fb3d9; font-size: 13px; }
   .card .body { padding: 16px 18px 18px; display: flex; flex-direction: column;
                 flex: 1; }
   .card h3 { margin: 0 0 6px; font-size: 18px; }
@@ -122,6 +130,20 @@
         <a class="get" href="tools/koala_focus.py" download>Download .py</a></div>
       </div>
     </div>
+    <div class="card">
+      <div class="sky" role="img" aria-label="What's Up? observation planner">
+        <span>What's Up?</span><small>whatsup.icrar.org</small></div>
+      <div class="body">
+        <h3>What's Up? planner <span class="tag">new</span></h3>
+        <p>ICRAR's observation planner: when your targets are up from the
+        AAT (or any other telescope), Moon and Sun positions, altitude or
+        airmass through the night and year, and finder charts. Upload a
+        list of names with RA/Dec.</p>
+        <div class="links"><a class="open" href="whatsup.html">Open</a>
+        <a class="get" href="https://whatsup.icrar.org" target="_blank"
+           rel="noopener">whatsup.icrar.org &#8599;</a></div>
+      </div>
+    </div>
   </div>
 
   <h2 id="run">Run it on your own computer</h2>
@@ -148,6 +170,9 @@
     offset-between-positions and focus tools are adapted from the KOALA
     observing scripts used at the Anglo-Australian Telescope; the focus
     script is by &Aacute;ngel R. L&oacute;pez-S&aacute;nchez (AAO/MQU).
+    The <a href="https://whatsup.icrar.org">What's Up?</a> planner is by
+    Aaron Robotham at <a href="https://www.icrar.org/">ICRAR</a>; it is
+    linked and shown here from its own site, not copied.
     Credit and thanks to their authors.</p>
     <p>This is an independent, unofficial collection: it is not run or
     endorsed by the AAT or its operators. Always check offsets against the

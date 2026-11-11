@@ -11,6 +11,7 @@ const TOOLS = [
   ["offsets.html", "Small offsets"],
   ["positions.html", "Offset between positions"],
   ["focus.html", "Focus"],
+  ["whatsup.html", "What's Up? (ICRAR)"],
 ];
 
 const tool = document.body.dataset.tool;

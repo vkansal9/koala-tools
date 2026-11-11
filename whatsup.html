@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What's Up? observation planner</title>
+<meta name="description" content="ICRAR's What's Up? observation planner (by Aaron Robotham), shown inside the KOALA tools site.">
+<style>
+  html, body { height: 100%; }
+  body { margin: 0; background: #0b1020; color: #dfe6f5; display: flex;
+         flex-direction: column;
+         font-family: -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; }
+  nav { font-size: 13px; background: #0b1020; color: #9fb3d9;
+        padding: 8px 24px; display: flex; flex-wrap: wrap;
+        align-items: center; gap: 4px; }
+  nav a { color: #9fb3d9; text-decoration: none; margin-right: 16px; }
+  nav a.home { color: #fff; font-weight: 700; margin-right: 22px; }
+  nav a.here { color: #fff; font-weight: 600; }
+  nav a.out { margin-left: auto; margin-right: 0; }
+  .note { font-size: 13px; background: #131a30; color: #9fb3d9;
+          padding: 8px 24px; border-top: 1px solid #1f2847;
+          border-bottom: 1px solid #1f2847; }
+  .note a { color: #8fc7ff; }
+  .note b { color: #dfe6f5; }
+  iframe { flex: 1; width: 100%; border: 0; background: #fff; }
+</style>
+</head>
+<body>
+<nav>
+  <a class="home" href="./">&#9733; KOALA tools</a>
+  <a href="mosaic.html">Mosaic planner</a>
+  <a href="offsets.html">Small offsets</a>
+  <a href="positions.html">Offset between positions</a>
+  <a href="focus.html">Focus</a>
+  <a class="here" href="whatsup.html">What's Up? (ICRAR)</a>
+  <a class="out" href="https://whatsup.icrar.org" target="_blank"
+     rel="noopener">Open in a new tab &#8599;</a>
+</nav>
+<div class="note">
+  <b>What's Up?</b> is ICRAR's observation planner by Aaron Robotham, shown
+  here from <a href="https://whatsup.icrar.org" target="_blank"
+  rel="noopener">whatsup.icrar.org</a>. Pick <b>AAT</b> as the telescope to
+  plan KOALA nights. It needs an internet connection; if it stays blank,
+  use <a href="https://whatsup.icrar.org" target="_blank" rel="noopener">Open
+  in a new tab</a>.
+</div>
+<iframe src="https://whatsup.icrar.org" title="What's Up? observation planner (ICRAR)"
+        loading="eager" referrerpolicy="no-referrer"></iframe>
+</body></html>
